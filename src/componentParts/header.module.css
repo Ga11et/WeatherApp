@@ -1,0 +1,32 @@
+.main{
+    background-image: url('../assets/header.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 800px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main > section{
+    padding-top: 22%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    font-size: 4em;
+    margin: 0;
+}
+.main > section > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main > section h1,
+.main > section h2{
+    margin: 0;
+    text-transform: capitalize;
+}
+.main > section h2{
+    font-size: 1.5rem;
+}
