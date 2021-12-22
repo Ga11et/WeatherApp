@@ -1,7 +1,24 @@
 
 /* Animation */
 
-
+@keyframes weatherPartA {
+    0%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+@keyframes inWeatherPartA {
+    0%{
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
 
 /* Nav */
 
@@ -52,6 +69,7 @@
 .weatherMain{
     display: inline-block;
     position: relative;
+    animation: weatherPartA 500ms ease-out 1 forwards;
 }
 .weatherMain img{
     width: 100%;
@@ -61,11 +79,13 @@
     position: absolute;
     color: white;
     margin: 0;
+    animation: inWeatherPartA 500ms ease-out 1 forwards;
 }
 .weatherMain .time{
     top: 40px;
     right: 40px;
     font-size: 1em;
+    animation: inWeatherPartA 500ms ease-out 1 forwards;
 }
 .weatherMain .day{
     top: 40px;
@@ -75,17 +95,20 @@
     border: 1px solid #2E2C2D;
     border-radius: 7px;
     padding: 0px 1.3em 4px;
+    animation: inWeatherPartA 500ms ease-out 1 forwards;
 }
 .weatherMain .temp{
     bottom: 40px;
     right: 40px;
     font-size: 4em;
+    animation: inWeatherPartA 500ms ease-out 1 forwards;
 }
 .weatherMain .additionInfo{
     position: absolute;
     bottom: 40px;
     left: 40px;
     color: white;
+    animation: inWeatherPartA 500ms ease-out 1 forwards;
 }
 .weatherMain .additionInfo > div{
     display: flex;
@@ -106,6 +129,7 @@
     flex-direction: column;
     align-items: center;
     color: white;
+    animation: inWeatherPartA 500ms ease-out 1 forwards;
 }
 .weatherMain .main > div{
     display: flex;

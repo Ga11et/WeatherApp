@@ -1,17 +1,21 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { AppStateType } from "../redux/reduxState";
 import css from './header.module.css'
 
 export const Header: FC<{}> = (props) => {
 
-    const todayWeather = useSelector( (state: AppStateType) => state.weather.weatherList)
+    const todayWeatherSel = useSelector( (state: AppStateType) => state.weather.weatherList)
+    const [todayWeather, setTodayWeather] = useState(() => todayWeatherSel)
+
     const temp = Math.round(todayWeather.main.temp)
     const feels = Math.round(todayWeather.main.feels_like)
     const day = new Date(todayWeather.dt * 1000).toString().slice(0,3)
     const description = todayWeather.weather[0].description
 
-
+    useEffect( () => {
+        setTodayWeather(todayWeatherSel)
+    }, [todayWeatherSel])
 
     return <header className={css.main}>
         <section>
